@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unknown Motives</title>
+    <title>unknown motives</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/css/StyleSheet.min.css" rel="stylesheet" />
@@ -38,14 +38,6 @@
         </div>
     </div>
 
-    <svg>
-        <filter id="turbulence" x="0" y="0" width="100%" height="100%">
-            <feTurbulence id="sea-filter" numOctaves="1" seed="5" baseFrequency="0.01 0.01"></feTurbulence>
-            <feDisplacementMap scale="20" in="SourceGraphic"></feDisplacementMap>
-        </filter>
-        <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="60s" keyTimes="0;0.5;1" values="0.01 0.01;0.03 0.01;0.02 0.01" repeatCount="indefinite" />
-    </svg>
-
     <style>
         .background {
             position: absolute;
@@ -53,7 +45,7 @@
             left: 0;
             height: 100vh;
             width: 100vw;
-            background-image: url("https://f4.bcbits.com/img/a2480582447_10.jpg");
+            background-image: url("img/full.png");
             background-size: cover;
             background-position: center;
         }
@@ -70,15 +62,27 @@
                 background-position: center;
             }
 
+        .main {
+            margin-top:15vh;
+        }
     </style>
 
-        <div class="container">
-    <div class="position-fixed">
+    <div class="container">
+        <div class="position-fixed">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
         </div>
     </div>
+
+
+    <svg>
+        <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+            <feTurbulence id="sea-filter" numOctaves="1" seed="2" baseFrequency="0.01 0.01"></feTurbulence>
+            <feDisplacementMap scale="20" in="SourceGraphic"></feDisplacementMap>
+        </filter>
+        <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="60s" keyTimes="0;0.5;1" values="0.01 0.01;0.03 0.03;0.02 0.01" repeatCount="indefinite" />
+    </svg>
 
     @*<footer class="border-top footer text-muted">
             <div class="container">
